@@ -1,0 +1,26 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "EPSG:4326"
+    }
+  },
+  "features": [
+    <% @features.each do |feature| %>
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          <%= feature.longitude %>,
+          <%= feature.latitude %>
+        ]
+      },
+      "properties": {
+        "created_at": <%= feature.created_at %>
+      }
+    }
+    <% end %>
+  ]
+  }

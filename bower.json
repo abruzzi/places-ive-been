@@ -1,0 +1,21 @@
+{
+  "name": "places-ive-been",
+  "version": "0.0.0",
+  "authors": [
+    "Qiu Juntao <juntao.qiu@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "openlayers3": "~3.0.0",
+    "leaflet": "~0.7.5"
+  }
+}
