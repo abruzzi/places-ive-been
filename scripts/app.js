@@ -2,7 +2,7 @@ $(function() {
   var image = new ol.style.Circle({
     radius: 5,
     fill: null,
-    stroke: new ol.style.Stroke({color: '#319b42', width: 1})
+    stroke: new ol.style.Stroke({color: '#f04e98', width: 1})
   });
 
   var styles = {
@@ -15,15 +15,11 @@ $(function() {
     return styles[feature.getGeometry().getType()];
   };
 
-  $.getJSON('places-ive-been-3857.json').done(function(geojson) {
+  $.getJSON('data/places-ive-been-3857.json').done(function(geojson) {
 
     var vectorSource = new ol.source.Vector({
       features: (new ol.format.GeoJSON()).readFeatures(geojson)
     });
-    //
-    // var vectorSource = new ol.source.Vector({
-    //   url: 'places-ive-been.json',
-    // });
 
     var vectorLayer = new ol.layer.Vector({
       source: vectorSource,
@@ -33,16 +29,10 @@ $(function() {
     var map = new ol.Map({
       layers: [
         new ol.layer.Tile({
-              source: new ol.source.Stamen({
-                layer: 'watercolor'
-              })
-            }),
-            new ol.layer.Tile({
-              source: new ol.source.Stamen({
-                layer: 'terrain-labels'
-              })
-            }),
-
+          source: new ol.source.Stamen({
+            layer: 'toner'
+          })
+        }),
         vectorLayer
       ],
       target: 'map',

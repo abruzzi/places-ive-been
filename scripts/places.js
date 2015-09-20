@@ -13,5 +13,4 @@ $(function() {
             maxZoom: 16,
             minZoom: 2,
         }).addTo(map);
-
 });
